@@ -1,0 +1,285 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_bg"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/laction"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/ripple_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:src="@drawable/l_action" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/laction"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_med" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ladw"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/ripple_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:src="@drawable/l_adw" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/ladw"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_med" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lapex"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/ripple_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:src="@drawable/l_apex" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/lapex"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_med" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/latom"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/ripple_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:src="@drawable/l_atom" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/latom"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_med" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/laviate"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/ripple_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:src="@drawable/l_aviate" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/laviate"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_med" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lgo"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/ripple_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:src="@drawable/l_go" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/lgo"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_med" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lholo"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/ripple_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:src="@drawable/l_holo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/lholo"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_med" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linspire"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/ripple_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:src="@drawable/l_inspire" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/linspire"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_med" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnext"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/ripple_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:src="@drawable/l_next" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/lnext"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_med" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnova"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/ripple_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:src="@drawable/l_nova" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/lnova"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_med" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lsmart"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/ripple_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:src="@drawable/l_smart" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/list_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/lsmart"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_med" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
