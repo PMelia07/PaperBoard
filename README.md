@@ -8,22 +8,27 @@ Try out the sample applications. Found at samples folder.
 
 
 #Features:
-
-- Dashboard completely based in Material Design.
-- Everything has subtle animations.
-- Drawer.
-- Show changelog dialog with every new update.
-- Icon Previews with Dialog showing Icon and App Name after clicking.
-- In-App Multiple Launcher Icons Applier.
-- Cloud wallpapers only.
-- Option to set or download wall. If it's meant to be set, there's an option to crop it, or leave it in original size.
+- Material Design inspired/based dashboard.
+- Cloud based (only) wallpapers.
+- Wallpapers can be applied, cropped-and-applied, or downloaded.
 - In-App Icon Request tool.
+- Previews section, where user could see themed icons.
+- License Checker.
+- Changelog shown with every update.
+- Apply section with 11 supported launcher.
 - Credits section.
-- Installer checker (for if the app was actually downloaded from Play Store, or not).
-- You can customize almost everything.
+- Requires API15+ or Android 4.0.3+
 
-<b>Coming soon:</b>
+<b>Future features (No ETA):</b>
+- Clickable icons in Previews section, showing icon and app name in a dialog.
+- Replace GridView and ListView with RecyclerView to improve performance.
+- More supported launchers to direct apply.
+- Docks support.
 - Muzei Support.
+- Themeable UI.
+- Option to delete cache directly inside the app.
+- Option to choose downloads folder (for wallpapers).
+- In-App-Purchases for Premium Icon Requests.
 
 
 #How to Implement
