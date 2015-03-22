@@ -209,8 +209,26 @@ public class Main extends ActionBarActivity {
                 break;
 
             case R.id.sendemail:
+                StringBuilder emailBuilder = new StringBuilder();
+
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getResources().getString(R.string.email_id)));
                 intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.email_subject));
+
+                emailBuilder.append("\n \n \nOS Version: " + System.getProperty("os.version") + "(" + Build.VERSION.INCREMENTAL + ")");
+                emailBuilder.append("\nOS API Level: " + Build.VERSION.SDK_INT);
+                emailBuilder.append("\nDevice: " + Build.DEVICE);
+                emailBuilder.append("\nManufacturer: " + Build.MANUFACTURER);
+                emailBuilder.append("\nModel (and Product): " + Build.MODEL + " (" + Build.PRODUCT + ")");
+                PackageInfo appInfo = null;
+                try {
+                    appInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+                } catch (PackageManager.NameNotFoundException e) {
+                    e.printStackTrace();
+                }
+                emailBuilder.append("\nApp Version Name: " + appInfo.versionName);
+                emailBuilder.append("\nApp Version Code: " + appInfo.versionCode);
+
+                intent.putExtra(Intent.EXTRA_TEXT, emailBuilder.toString());
                 startActivity(Intent.createChooser(intent, (getResources().getString(R.string.send_title))));
                 break;
 
