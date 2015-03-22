@@ -59,11 +59,11 @@ There you can find all the info about implementing and using this dashboard temp
 
     Copyright 2015 Jahir Fiquitiva
 
-    Licensed under the CreativeCommons Attribution
+    Licensed under the CreativeCommons Attribution ShareAlike
     4.0 International License. You may not use this file except in compliance 
     with the License. You may obtain a copy of the License at
 
-       http://creativecommons.org/licenses/by/4.0/legalcode
+       http://creativecommons.org/licenses/by-sa/4.0/legalcode
 
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
