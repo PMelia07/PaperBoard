@@ -40,7 +40,7 @@ public class Main extends ActionBarActivity {
     SharedPreferences sharedPreferences;
     private boolean firstrun, enable_features;
     private Preferences mPrefs;
-    private boolean withLicenseChecker = true;
+    private boolean withLicenseChecker = false;
     private Context context;
 
     @Override
