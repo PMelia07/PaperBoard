@@ -154,7 +154,7 @@
             android:theme="@style/Default">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.jahirfiquitiva.paperboard.activities.Main" />
+                android:value="com.jahirfiquitiva.paperboard.activities.DetailedWallpaper" />
         </activity>
     </application>
 
