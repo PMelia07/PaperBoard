@@ -3,6 +3,8 @@
 PaperBoard is an Icon Pack template which implements the Material Design guidelines in many of its components.
 This dashboard works only on API 15+ and has set API 22 as Target SDK.
 
+<size="2><b>So Material. Much wow.</b></size>
+
 
 Try out the sample applications. Found at samples folder.
 
