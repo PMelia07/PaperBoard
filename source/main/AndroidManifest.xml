@@ -10,11 +10,9 @@
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
 
-    <!-- Not for now -->
-    <!--
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    -->
+   
 
     <supports-screens 
         android:anyDensity="true" 
@@ -170,6 +168,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.jahirfiquitiva.paperboard.activities.DetailedWallpaper" />
         </activity>
+
+<!-- Muzei Service -->
+
+        <service android:name="ddev.iconpack.MuzeiArtSource"
+            android:label="@string/artsource_name"
+            android:description="@string/artsource_desc"
+            android:icon="@drawable/ic_muzei_logo">
+            <intent-filter>
+                <action android:name="com.google.android.apps.muzei.api.MuzeiArtSource" />
+            </intent-filter>
+            <meta-data android:name="color" android:value="@color/primary" />
+        </service>
 
     </application>
 
