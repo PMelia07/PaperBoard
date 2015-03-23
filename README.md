@@ -33,25 +33,25 @@ Try out the sample applications. Found at samples folder.
 #Changelog
 <b>Version 2</b>
 
-How to update if you had the previous version?
-- Make a backup of the files you have edited.
-- Delete them all in the project folder.
-- Add the new ones in Repository.
-- Make the changes again.
-I will try to make this easier in future updates. Sorry.
+	How to update if you had the previous version?
+	- Make a backup of the files you have edited.
+	- Delete them all in the project folder.
+	- Add the new ones in Repository.
+	- Make the changes again.
+	I will try to make this easier in future updates. Sorry.
 
-	- New welcome card.
-	- Minor fix with LicenseChecker.
-	- Minor layout fix in IconRequest section.
-	- Improved Apply section, now faster and added support for these launchers: Nine, KK, Lucid, Solo and TSF. (Total: 16 launchers there). Thanks to Mohammed Musaddiq for sharing stuff.
-	- Apply section now shows installed and not installed texts for every launcher.
+- New welcome card.
+- Minor fix with LicenseChecker.
+- Minor layout fix in IconRequest section.
+- Improved Apply section, now faster and added support for these launchers: Nine, KK, Lucid, Solo and TSF. (Total: 16 launchers there). Thanks to Mohammed Musaddiq for sharing stuff.
+- Apply section now shows installed and not installed texts for every launcher.
 
-	Added changes by Allan W:
-	- Fixed thing that when going back from DetailedWallpaper activity, it went back to home, now it goes back to Wallpapers Grid.
-	- Added device info while sending e-mail to developer.
+Added changes by Allan W:
+- Fixed thing that when going back from DetailedWallpaper activity, it went back to home, now it goes back to Wallpapers Grid.
+- Added device info while sending e-mail to developer.
 
-	Added changes by Danish Shah:
-	- Added code to make the app supported for any screen size.
+Added changes by Danish Shah:
+- Added code to make the app supported for any screen size.
 
 <b>Version 1</b>
 
