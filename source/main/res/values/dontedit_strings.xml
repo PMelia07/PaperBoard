@@ -93,8 +93,8 @@
     <string name="download">DOWNLOAD</string>
 
     <!-- LauncherNotInstalled Dialog -->
-    <string name="lni_title">Launcher Not Installed</string>
-    <string name="lni_content">" Launcher is currently not installed in your device.
+    <string name="lni_title">" Not Installed"</string>
+    <string name="lni_content">" is currently not installed in your device.
 Would you like to install it from Play Store?"</string>
     <string name="lni_yes">Yes</string>
     <string name="lni_no">No</string>
@@ -184,5 +184,10 @@ Licensed under CreativeCommons-Attribution License."</string>
     <string name="license_failed_title">License Check Failed</string>
     <string name="license_success_title">License Check Success</string>
     <string name="exit">Exit App</string>
+
+    <string name="ratebtn">RATE</string>
+	
+	<string name="installed">Installed</string>
+	<string name="noninstalled">Not Installed</string>
 
 </resources>

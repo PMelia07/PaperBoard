@@ -25,5 +25,7 @@
     <color name="theme_info">@color/primary</color>
     <color name="theme">@color/primary</color>
     <color name="divider_grey">#d4d4d4</color>
+    <color name="red">#f44336</color>
+    <color name="green">#4caf50</color>
 
 </resources>

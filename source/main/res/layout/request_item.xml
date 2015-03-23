@@ -10,7 +10,9 @@
         android:id="@+id/imgIcon"
         android:layout_width="@dimen/app_icon_size"
         android:layout_height="@dimen/app_icon_size"
-        android:layout_margin="@dimen/list_image_right_pad"
+        android:layout_marginLeft="@dimen/request_item_padding_left"
+        android:layout_marginTop="@dimen/list_image_right_pad"
+        android:layout_marginBottom="@dimen/list_image_right_pad"
         android:contentDescription="@null"
         android:src="@drawable/ic_launcher" />
 
@@ -19,6 +21,7 @@
         android:layout_width="@dimen/no_width"
         android:layout_height="wrap_content"
         android:layout_weight="1.0"
+        android:layout_marginLeft="@dimen/request_itemtext_padding_left"
         android:textColor="@color/dark_grey"
         android:textSize="@dimen/text_med" />
 

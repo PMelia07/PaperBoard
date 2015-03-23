@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.CardView;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -32,6 +34,9 @@ public class Credits extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.section_credits, null);
 
         context = getActivity();
+
+        ActionBar toolbar = ((ActionBarActivity)context).getSupportActionBar();
+        toolbar.setTitle(R.string.section_seven);
 
         TextView authordesc = (TextView) root.findViewById(R.id.dashauthor_info);
         authordesc.setText(Html.fromHtml(getString(R.string.dashboard_author_desc)));

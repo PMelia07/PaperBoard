@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -203,11 +206,6 @@ public class Main extends ActionBarActivity {
                 startActivity(Intent.createChooser(sharingIntent, (getResources().getString(R.string.share_title))));
                 break;
 
-            case R.id.rate:
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.play_store_link)));
-                startActivity(browserIntent);
-                break;
-
             case R.id.sendemail:
                 StringBuilder emailBuilder = new StringBuilder();
 
@@ -261,8 +259,11 @@ public class Main extends ActionBarActivity {
             }
         } else {
             if (withLicenseChecker) {
-                if (!enable_features) {
+                if (enable_features == false) {
                     showNotLicensedDialog();
+                } else {
+                    addItemsToDrawer();
+                    showChangelogDialog();
                 }
             } else {
                 addItemsToDrawer();

@@ -8,18 +8,13 @@
         android:title="@string/share"
         app:showAsAction="never" />
     <item
-        android:id="@+id/rate"
-        android:orderInCategory="200"
-        android:title="@string/rate"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/sendemail"
-        android:orderInCategory="300"
+        android:orderInCategory="200"
         android:title="@string/sendemail"
         app:showAsAction="never" />
     <item
         android:id="@+id/changelog"
-        android:orderInCategory="400"
+        android:orderInCategory="300"
         android:title="@string/changelog"
         app:showAsAction="never" />
 </menu>

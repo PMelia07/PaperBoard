@@ -15,20 +15,47 @@ Try out the sample applications. Found at samples folder.
 - Previews section, where user could see themed icons.
 - License Checker.
 - Changelog shown with every update.
-- Apply section with 11 supported launcher.
+- Apply section with 16 supported launcher.
 - Credits section.
 - Requires API15+ or Android 4.0.3+
 
 <b>Future features (No ETA):</b>
 - Clickable icons in Previews section, showing icon and app name in a dialog.
 - Replace GridView and ListView with RecyclerView to improve performance.
-- More supported launchers to direct apply.
 - Docks support.
 - Muzei Support.
 - Themeable UI.
 - Option to delete cache directly inside the app.
 - Option to choose downloads folder (for wallpapers).
 - In-App-Purchases for Premium Icon Requests.
+
+
+#Changelog
+<b>Version 2</b>
+
+	How to update if you had the previous version?
+	- Make a backup of the files you have edited.
+	- Delete them all in the project folder.
+	- Add the new ones in Repository.
+	- Make the changes again.
+	I will try to make this easier in future updates. Sorry.
+
+- New welcome card.
+- Minor fix with LicenseChecker.
+- Minor layout fix in IconRequest section.
+- Improved Apply section, now faster and added support for these launchers: Nine, KK, Lucid, Solo and TSF. (Total: 16 launchers there). Thanks to Mohammed Musaddiq for sharing stuff.
+- Apply section now shows installed and not installed texts for every launcher.
+
+Added changes by Allan W:
+- Fixed thing that when going back from DetailedWallpaper activity, it went back to home, now it goes back to Wallpapers Grid.
+- Added device info while sending e-mail to developer.
+
+Added changes by Danish Shah:
+- Added code to make the app supported for any screen size.
+
+<b>Version 1</b>
+Initial release.
+
 
 
 #How to Implement
@@ -56,6 +83,8 @@ There you can find all the info about implementing and using this dashboard temp
     
     
 #License
+
+Details and more info in PDF.
 
     Copyright 2015 Jahir Fiquitiva
 
