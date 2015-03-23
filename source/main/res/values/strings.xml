@@ -2,6 +2,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <string name="json_file_url">"https://raw.githubusercontent.com/jahirfiquitiva/MinDesigns-Wallpapers/master/JSON-Files/walls_test.json"</string>
+    <string name="artsource_name">"PaperBoard"</string>
+    <string name="artsource_desc">"This is description of your ArtSource"</string>
 
     <!-- Main Strings -->
     <string name="app_name">"PaperBoard"</string>
