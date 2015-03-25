@@ -31,6 +31,20 @@ Try out the sample applications. Found at samples folder.
 - Option to choose downloads folder (for wallpapers).
 - In-App-Purchases for Premium Icon Requests.
 
+#Preview
+##Demos
+Sample application can be easily found [here](https://github.com/jahirfiquitiva/PaperBoard/tree/master/samples).
+
+##Screenshots
+![Image](https://raw.githubusercontent.com/jahirfiquitiva/PaperBoard/master/screenshots/1.png)
+![Image](https://raw.githubusercontent.com/jahirfiquitiva/PaperBoard/master/screenshots/3.png)
+![Image](https://raw.githubusercontent.com/jahirfiquitiva/PaperBoard/master/screenshots/5.png)
+![Image](https://raw.githubusercontent.com/jahirfiquitiva/PaperBoard/master/screenshots/6.png)
+![Image](https://raw.githubusercontent.com/jahirfiquitiva/PaperBoard/master/screenshots/7.png)
+![Image](https://raw.githubusercontent.com/jahirfiquitiva/PaperBoard/master/screenshots/9.png)
+![Image](https://raw.githubusercontent.com/jahirfiquitiva/PaperBoard/master/screenshots/10.png)
+
+
 
 #Changelog
 <b>Version 2</b>
