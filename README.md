@@ -35,8 +35,10 @@ Try out the sample applications. Found at samples folder.
 ##Demos
 Sample application can be easily found [here](https://github.com/jahirfiquitiva/PaperBoard/tree/master/samples).
 
-<!-- 
+
 ##Screenshots
+Give a look at the screenshots [here](https://github.com/jahirfiquitiva/PaperBoard/tree/master/screenshots).
+<!-- 
 ![Image](https://raw.githubusercontent.com/jahirfiquitiva/PaperBoard/master/screenshots/1.png)
 ![Image](https://raw.githubusercontent.com/jahirfiquitiva/PaperBoard/master/screenshots/3.png)
 ![Image](https://raw.githubusercontent.com/jahirfiquitiva/PaperBoard/master/screenshots/5.png)
