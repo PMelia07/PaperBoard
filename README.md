@@ -33,7 +33,7 @@ Try out the sample applications. Found at samples folder.
 
 #Preview
 ##Demos
-Sample application can be easily found [here](https://github.com/jahirfiquitiva/PaperBoard/tree/master/samples).
+Sample applications can be easily found [here](https://github.com/jahirfiquitiva/PaperBoard/tree/master/samples).
 
 
 ##Screenshots
