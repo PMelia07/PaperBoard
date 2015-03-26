@@ -54,7 +54,8 @@ Btw, you can try to replace or add the files by your own and under your own resp
 List of modified files [here](https://github.com/jahirfiquitiva/PaperBoard/blob/master/fmilu.txt).
 
 ##Changelog
-Changelog can be easily found [here](https://github.com/jahirfiquitiva/PaperBoard/releases/latest).
+Latest version changelog can be easily found [here](https://github.com/jahirfiquitiva/PaperBoard/releases/latest).
+version changelog can be easily found [here](https://github.com/jahirfiquitiva/PaperBoard/releases/latest).
 
 
 #How to Implement
