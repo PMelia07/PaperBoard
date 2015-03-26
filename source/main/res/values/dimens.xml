@@ -1,5 +1,6 @@
 <resources>
 
+    <dimen name="changelog">0dp</dimen>
     <dimen name="margin_medium_sm">8dp</dimen>
     <dimen name="margin_medium">10dp</dimen>
     <dimen name="iconcolumn">70dp</dimen>

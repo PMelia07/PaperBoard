@@ -1,5 +1,6 @@
 package com.jahirfiquitiva.paperboard.activities;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,6 +20,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
+
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.jahirfiquitiva.dashboardsample.R;
@@ -30,6 +33,8 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.jahirfiquitiva.paperboard.ChangelogAdapter;
+
 
 
 public class Main extends ActionBarActivity {
@@ -273,7 +278,22 @@ public class Main extends ActionBarActivity {
     }
 
     private void changelog() {
-        new MaterialDialog.Builder(context)
+        ListView listView = new ListView(this);
+        ChangelogAdapter adapter = new ChangelogAdapter(this, R.array.changelog_root);
+        listView.setAdapter(adapter);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.changelog_dialog_title)
+                .setView(listView)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create().show();
+
+        /*new MaterialDialog.Builder(new ContextThemeWrapper(this, R.style.ChangelogDialog))
                 .title(R.string.changelog_dialog_title)
                 .content(R.string.changelog_content)
                 .positiveText(R.string.nice)
@@ -283,7 +303,7 @@ public class Main extends ActionBarActivity {
                         mPrefs.setNotFirstrun();
                     }
                 })
-                .show();
+                .show();*/
     }
 
     private void showChangelogDialog() {

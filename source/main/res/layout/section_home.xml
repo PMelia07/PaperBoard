@@ -32,7 +32,8 @@
                     android:clickable="false"
                     android:padding="@dimen/cards_padding"
                     card_view:cardCornerRadius="@dimen/card_corner_radius"
-                    card_view:cardElevation="@dimen/cards_elevation">
+                    card_view:cardElevation="@dimen/cards_elevation"
+                    card_view:cardBackgroundColor="@color/card">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -110,7 +111,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/cards_margin"
                     card_view:cardCornerRadius="@dimen/card_corner_radius"
-                    card_view:cardElevation="@dimen/cards_elevation">
+                    card_view:cardElevation="@dimen/cards_elevation"
+                    card_view:cardBackgroundColor="@color/card">
 
                     <LinearLayout
                         android:layout_width="fill_parent"
@@ -190,7 +192,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/cards_margin"
                     card_view:cardCornerRadius="@dimen/card_corner_radius"
-                    card_view:cardElevation="@dimen/cards_elevation">
+                    card_view:cardElevation="@dimen/cards_elevation"
+                    card_view:cardBackgroundColor="@color/card">
 
                     <LinearLayout
                         android:layout_width="fill_parent"
@@ -266,7 +269,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/cards_margin"
                     card_view:cardCornerRadius="@dimen/card_corner_radius"
-                    card_view:cardElevation="@dimen/cards_elevation">
+                    card_view:cardElevation="@dimen/cards_elevation"
+                    card_view:cardBackgroundColor="@color/card">
 
                     <LinearLayout
                         android:layout_width="fill_parent"
@@ -342,7 +346,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/cards_margin"
                     card_view:cardCornerRadius="@dimen/card_corner_radius"
-                    card_view:cardElevation="@dimen/cards_elevation">
+                    card_view:cardElevation="@dimen/cards_elevation"
+                    card_view:cardBackgroundColor="@color/card">
 
                     <LinearLayout
                         android:layout_width="fill_parent"
