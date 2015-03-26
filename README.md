@@ -55,7 +55,7 @@ List of modified files [here](https://github.com/jahirfiquitiva/PaperBoard/blob/
 
 ##Changelog
 Latest version changelog can be easily found [here](https://github.com/jahirfiquitiva/PaperBoard/releases/latest).
-version changelog can be easily found [here](https://github.com/jahirfiquitiva/PaperBoard/releases/latest).
+The full changelog can be found [here](https://github.com/jahirfiquitiva/PaperBoard/releases).
 
 
 #How to Implement
