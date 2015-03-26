@@ -30,7 +30,7 @@ public class ChangelogAdapter extends BaseAdapter {
                 mChangelog[i] = mContext.getResources().getStringArray(id);
             }
         }
-        typedArray.recycle();
+        typedArray.recycle(co);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class ChangelogAdapter extends BaseAdapter {
                 // No need for new line on the first item
                 contentStr += "\n";
             }
-            contentStr += "- ";
+            contentStr += "\u2022 ";
             contentStr += mChangelog[position][i];
         }
 
