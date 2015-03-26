@@ -1,0 +1,50 @@
+Files modified with latest update:
+
+- All Java files inside com/jahirfiquitiva/paperboard/iconfragments
+
+- Java files at com/jahirfiquitiva/paperboard/fragments:
+	Credits
+	WallsGridAdapter
+	
+- Java files at com/jahirfiquitiva/paperboard/activities:
+	Main
+	
+- Added Java files to com/jahirfiquitiva/paperboard/muzei
+
+- Added Java file to com/jahirfiquitiva/paperboard/utils
+	PaletteTransformation
+	ChangelogAdapter
+	
+- Java files at com/jahirfiquitiva/paperboard/utils
+	Preferences
+	
+- Added drawable file at res/drawable/	
+	numberpicker.xml
+
+- Added menu file at res/menu/	
+	muzei_settings.xml
+	
+- Modified layout files at res/layout/
+	section_home.xml
+	section_credits.xml
+	icons_grid.xml
+	wallpaper_item.xml
+	
+- Added layout file at res/layout/
+	changelog_content.xml
+	muzei_settings
+
+- Added files at res/values
+	changelog.xml
+	
+- Modified files at res/values
+	dontedit_strings.xml
+	strings.xml
+	dimens.xml
+	styles.xml
+	colors.xml
+
+- Modified files at res/values-es
+	dontedit_strings.xml
+	
+- AndroidManifest.xml
