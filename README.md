@@ -42,10 +42,8 @@ Give a look at the screenshots [here](https://github.com/jahirfiquitiva/PaperBoa
 
 
 
-#Changelog
-<b>Version 3</b>
-
-How to update if you had the previous version?
+#Updating Guide
+##How to update if you had the previous version?
 - Make a backup of the files you have edited.
 - Delete them all in the project folder.
 - Add the new ones in Repository.
@@ -55,33 +53,8 @@ I will try to make this easier in future updates. Sorry.
 Btw, you can try to replace or add the files by your own and under your own responsibility.
 List of modified files [here](https://github.com/jahirfiquitiva/PaperBoard/blob/master/fmilu.txt).
 
-- Improved load of Icons Grid.
-- Fixed issue that made icons be duplicated and change its position weirdly, in Icons Grid.
-- Fixed the same issue in Wallpapers Grid.
-- Added animations to Icons and Wallpapers Grid.
-- Layout improvements in Home, Credits, Icons and Wallpapers sections. Including Cards issues fixes.
-- Deleted unnecessary cards in Credits section. (For libraries not used anymore).
-- Added Muzei support. Thanks to <b>Danish Shah</b> for some coding. Settings included.
-- Added use of Palette API in Wallpapers section. (With option to disable it).
-- Improved Changelog dialog (faster and simpler). Thanks to <b>Allan W</b> and <b>Ivon</b>.
-- Improved UI customization.
-- Updated Tutorial.pdf. Worth reading it again.
-	
-	
-<b>Version 2</b>
-- New welcome card.
-- Minor fix with LicenseChecker.
-- Minor layout fix in IconRequest section.
-- Improved Apply section, now faster and added support for these launchers: Nine, KK, Lucid, Solo and TSF. (Total: 16 launchers there).
-- Apply section now shows installed and not installed texts for every launcher.
-- Fixed thing that when going back from DetailedWallpaper activity, it went back to home, now it goes back to Wallpapers Grid.
-- Added device info while sending e-mail to developer.
-- Added code to make the app supported for any screen size.
-- Thanks to Mohammed Mussadiq, Allan W and Danish Shah for some help.
-
-
-<b>Version 1</b>
-Initial release.
+##Changelog
+Changelog can be easily found [here](https://github.com/jahirfiquitiva/PaperBoard/releases/latest).
 
 
 #How to Implement
