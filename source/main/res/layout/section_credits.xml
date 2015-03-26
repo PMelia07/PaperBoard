@@ -25,7 +25,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/cards_margin"
                 android:padding="@dimen/cards_padding"
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/card">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -106,7 +107,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/cards_margin"
                 android:padding="@dimen/cards_padding"
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/card">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -209,7 +211,8 @@
                 android:padding="@dimen/cards_padding"
 
                 android:visibility="gone"
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/card">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -286,7 +289,8 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:padding="@dimen/cards_padding"
 
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/card">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -363,7 +367,8 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:padding="@dimen/cards_padding"
 
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/card">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -440,7 +445,8 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:padding="@dimen/cards_padding"
 
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/card">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -517,7 +523,8 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:padding="@dimen/cards_padding"
 
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/card">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -594,7 +601,8 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:padding="@dimen/cards_padding"
 
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/card">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -671,7 +679,8 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:padding="@dimen/cards_padding"
 
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/card">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -748,7 +757,8 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:padding="@dimen/cards_padding"
 
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/card">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"

@@ -11,6 +11,8 @@
     <color name="secondary">#009688</color>
     <color name="secondary_pressed">#26a69a</color>
     <color name="navbar">#414141</color>
+    <!--ctrl + h and search for color/card if you want to customize card colors individually-->
+    <color name="card">#ffffff</color>
 
     <!-- Don't Edit!!! -->
     <color name="white">#ffffff</color>
