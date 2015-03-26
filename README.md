@@ -45,15 +45,15 @@ Give a look at the screenshots [here](https://github.com/jahirfiquitiva/PaperBoa
 #Changelog
 <b>Version 3</b>
 
-	How to update if you had the previous version?
-	- Make a backup of the files you have edited.
-	- Delete them all in the project folder.
-	- Add the new ones in Repository.
-	- Make the changes again.
-	I will try to make this easier in future updates. Sorry.
-	
-	Btw, you can try to replace or add the files by your own and under your own responsibility.
-	List of modified files [here](https://github.com/jahirfiquitiva/PaperBoard/tree/master/fmilu).
+How to update if you had the previous version?
+- Make a backup of the files you have edited.
+- Delete them all in the project folder.
+- Add the new ones in Repository.
+- Make the changes again.
+I will try to make this easier in future updates. Sorry.
+
+Btw, you can try to replace or add the files by your own and under your own responsibility.
+List of modified files [here](https://github.com/jahirfiquitiva/PaperBoard/blob/master/fmilu.txt).
 
 - Improved load of Icons Grid.
 - Fixed issue that made icons be duplicated and change its position weirdly, in Icons Grid.
