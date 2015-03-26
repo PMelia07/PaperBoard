@@ -30,7 +30,7 @@ public class ChangelogAdapter extends BaseAdapter {
                 mChangelog[i] = mContext.getResources().getStringArray(id);
             }
         }
-        typedArray.recycle(co);
+        typedArray.recycle();
     }
 
     @Override
