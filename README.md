@@ -67,7 +67,7 @@ There you can find all the info about implementing and using this dashboard temp
 * Material Dialogs: https://github.com/afollestad/material-dialogs
 * Material Drawer: https://github.com/mikepenz/MaterialDrawer
 * Picasso: https://github.com/square/picasso
-* OkHttp: https://github.com/square/okhtttp
+* OkHttp: https://github.com/square/okhttp
 * Muzei: https://github.com/romannurik/muzei/
 * FAB 1: https://github.com/futuresimple/android-floating-action-button/
 * FAB 2: https://github.com/makovkastar/FloatingActionButton
