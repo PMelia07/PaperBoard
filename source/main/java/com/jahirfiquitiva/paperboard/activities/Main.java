@@ -105,58 +105,24 @@ public class Main extends ActionBarActivity {
 
                         if (drawerItem != null) {
 
-                            if (drawerItem.getIdentifier() == 1) {
-                                currentItem = 1;
-                                getSupportActionBar().setTitle(thaApp);
-                                FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                tx.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                                tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Home"));
-                                tx.commit();
-                            } else if (drawerItem.getIdentifier() == 2) {
-                                currentItem = 2;
-                                getSupportActionBar().setTitle(thaPreviews);
-                                FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                tx.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-                                tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Previews"));
-                                tx.commit();
-                            } else if (drawerItem.getIdentifier() == 3) {
-                                currentItem = 3;
-                                getSupportActionBar().setTitle(thaApply);
-                                FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                tx.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-                                tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Apply"));
-                                tx.commit();
-                            } else if (drawerItem.getIdentifier() == 4) {
-                                ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-                                NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-                                boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+                            switch ((int) drawerItem.getIdentifier()) {
+                                case 1: switchFragment(1, thaApp, "Home");
+                                case 2: switchFragment(2, thaPreviews, "Previews");
+                                case 3: switchFragment(3, thaApply, "Apply");
+                                case 4:
+                                    ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                                    NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+                                    boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
 
-                                if (isConnected == true) {
-                                    currentItem = 4;
-                                    getSupportActionBar().setTitle(thaWalls);
-                                    FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                    tx.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-                                    tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Wallpapers"));
-                                    tx.commit();
-                                } else {
-                                    showNotConnectedDialog();
-                                }
-
-                            } else if (drawerItem.getIdentifier() == 5) {
-                                currentItem = 5;
-                                getSupportActionBar().setTitle(thaRequest);
-                                FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                tx.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-                                tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Request"));
-                                tx.commit();
-                            } else if (drawerItem.getIdentifier() == 6) {
-                                currentItem = 6;
-                                getSupportActionBar().setTitle(thaCredits);
-                                FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                tx.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                                tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Credits"));
-                                tx.commit();
+                                    if (isConnected == true) {
+                                        switchFragment(4, thaWalls, "Wallpapers");
+                                    } else {
+                                        showNotConnectedDialog();
+                                    }
+                                case 5: switchFragment(5, thaRequest, "Request");
+                                case 6: switchFragment(6, thaCredits, "Credits");
                             }
+                            
                         }
                     }
                 })
@@ -171,6 +137,16 @@ public class Main extends ActionBarActivity {
             result.setSelectionByIdentifier(1);
         }
 
+    }
+
+    private void switchFragment(int itemId, String title, String fragment)
+    {
+        currentItem = itemId;
+        getSupportActionBar().setTitle(title);
+        FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
+        tx.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments." + fragment));
+        tx.commit();
     }
 
     @Override
