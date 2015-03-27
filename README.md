@@ -3,7 +3,7 @@
 PaperBoard is an Icon Pack template which implements the Material Design guidelines in many of its components.
 This dashboard works only on API 15+ and has set API 22 as Target SDK.
 
-<size="2><b>So Material. Much wow.</b></size>
+<size="2><b>So Material. Much Design. Much wow.</b></size>
 
 
 Try out the sample applications. Found at samples folder.
@@ -84,21 +84,29 @@ There you can find all the info about implementing and using this dashboard temp
     
 #License
 
-Details and more info in PDF.
+Details and more info in PDF or website.
 
-    Copyright 2015 Jahir Fiquitiva
+	The MIT License (MIT)
 
-    Licensed under the CreativeCommons Attribution ShareAlike
-    4.0 International License. You may not use this file except in compliance 
-    with the License. You may obtain a copy of the License at
+	Copyright (c) 2015 Jahir Fiquitiva
 
-       http://creativecommons.org/licenses/by-sa/4.0/legalcode
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
 
 
 #Extra Info:
