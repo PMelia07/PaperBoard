@@ -1,10 +1,7 @@
 package com.jahirfiquitiva.paperboard.fragments;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -23,7 +20,6 @@ import java.util.ArrayList;
 
 public class IconsFragment extends Fragment {
 
-    LayoutInflater inflater;
     private Context context;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,9 +28,8 @@ public class IconsFragment extends Fragment {
         View view = inflater.inflate(R.layout.icons_grid, container, false);
 
         context = getActivity();
-        int iconSize = getResources().getDimensionPixelSize(R.dimen.allapps_icon_preview);
         GridView gridview = (GridView) view.findViewById(R.id.icons_grid);
-        final IconAdapter icAdapter = new IconAdapter(getActivity(), iconSize);
+        final IconAdapter icAdapter = new IconAdapter();
         gridview.setAdapter(icAdapter);
         return view;
 
@@ -50,11 +45,9 @@ public class IconsFragment extends Fragment {
     }
 
     private class IconAdapter extends BaseAdapter {
-        private Context mContext;
         private ArrayList<Integer> mThumbs;
 
-        public IconAdapter(Context mContext, int iconsize) {
-            this.mContext = mContext;
+        public IconAdapter() {
             loadIcon();
         }
 
@@ -77,14 +70,15 @@ public class IconsFragment extends Fragment {
         public View getView(final int position, View convertView, ViewGroup parent) {
 
             View icono = convertView;
-            IconsHolder holder = null;
+            IconsHolder holder;
             Animation anim = AnimationUtils.loadAnimation(context, R.anim.fade_in);
 
             if (icono == null) {
                 LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 icono = inflater.inflate(R.layout.icon, parent, false);
+                View dialogIconView = inflater.inflate(R.layout.dialog_icon, null, false);
                 icono.setLayoutParams(new GridView.LayoutParams(120, 120));
-                holder = new IconsHolder(icono);
+                holder = new IconsHolder(icono, dialogIconView);
                 icono.setTag(holder);
             } else {
                 holder = (IconsHolder) icono.getTag();
@@ -93,14 +87,13 @@ public class IconsFragment extends Fragment {
 
             holder.icon.startAnimation(anim);
             holder.icon.setImageResource(mThumbs.get(position));
+            final IconsHolder finalHolder = holder;
             holder.icon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    View dialogIconView = View.inflate(getActivity(), R.layout.dialog_icon, null);
-                    ImageView dialogIcon = (ImageView) dialogIconView.findViewById(R.id.dialogicon);
-                    dialogIcon.setImageResource(mThumbs.get(position));
+                    finalHolder.dialogIcon.setImageResource(mThumbs.get(position));
                     new MaterialDialog.Builder(getActivity())
-                        .customView(dialogIconView, false)
+                        .customView(finalHolder.dialog, false)
                         .positiveText(R.string.close)
                         .show();
                 }
@@ -111,15 +104,18 @@ public class IconsFragment extends Fragment {
 
         class IconsHolder {
             ImageView icon;
-
-            IconsHolder(View v) {
+            View dialog;
+            ImageView dialogIcon;
+            IconsHolder(View v, View dialog) {
                 icon = (ImageView) v.findViewById(R.id.icon_img);
-            }
+                this.dialog = dialog;
+                dialogIcon = (ImageView) dialog.findViewById(R.id.dialogicon);
 
+            }
         }
 
         private void loadIcon() {
-            mThumbs = new ArrayList<Integer>();
+            mThumbs = new ArrayList<>();
 
             final Resources resources = getResources();
             final String packageName = getActivity().getApplication().getPackageName();
