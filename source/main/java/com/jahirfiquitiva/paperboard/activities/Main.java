@@ -122,7 +122,7 @@ public class Main extends ActionBarActivity {
                                 case 5: switchFragment(5, thaRequest, "Request");
                                 case 6: switchFragment(6, thaCredits, "Credits");
                             }
-                            
+
                         }
                     }
                 })
@@ -321,97 +321,24 @@ public class Main extends ActionBarActivity {
                         .callback(new MaterialDialog.ButtonCallback() {
                             @Override
                             public void onPositive(MaterialDialog dialog) {
-
                                 enable_features = true;
                                 mPrefs.setFeaturesEnabled(true);
                                 addItemsToDrawer();
                                 showChangelogDialog();
-
                             }
                         })
                         .show();
-
-
             } else {
-                enable_features = false;
-                mPrefs.setFeaturesEnabled(false);
-                MaterialDialog dialog = new MaterialDialog.Builder(this)
-                        .title(R.string.license_failed_title)
-                        .content(R.string.license_failed)
-                        .positiveText(R.string.download)
-                        .negativeText(R.string.exit)
-                        .callback(new MaterialDialog.ButtonCallback() {
-                            @Override
-                            public void onPositive(MaterialDialog dialog) {
-
-                                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.play_store_link)));
-                                startActivity(browserIntent);
-
-                            }
-
-                            @Override
-                            public void onNegative(MaterialDialog dialog) {
-
-                                finish();
-
-                            }
-                        })
-                        .show();
-                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                    @Override
-                    public void onCancel(DialogInterface dialog) {
-                        finish();
-                    }
-                });
-                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        finish();
-                    }
-                });
-
+                showNotLicensedDialog();
             }
         } catch (Exception e) {
-            enable_features = false;
-            mPrefs.setFeaturesEnabled(false);
-            MaterialDialog dialog = new MaterialDialog.Builder(this)
-                    .title(R.string.license_failed_title)
-                    .content(R.string.license_failed)
-                    .positiveText(R.string.download)
-                    .negativeText(R.string.exit)
-                    .callback(new MaterialDialog.ButtonCallback() {
-                        @Override
-                        public void onPositive(MaterialDialog dialog) {
-
-                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.play_store_link)));
-                            startActivity(browserIntent);
-
-                        }
-
-                        @Override
-                        public void onNegative(MaterialDialog dialog) {
-
-                            finish();
-
-                        }
-                    })
-                    .show();
-            dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                @Override
-                public void onCancel(DialogInterface dialog) {
-                    finish();
-                }
-            });
-            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                @Override
-                public void onDismiss(DialogInterface dialog) {
-                    finish();
-                }
-            });
+            showNotLicensedDialog();
         }
     }
 
     private void showNotLicensedDialog() {
+        enable_features = false;
+        mPrefs.setFeaturesEnabled(false);
         MaterialDialog dialog = new MaterialDialog.Builder(this)
                 .title(R.string.license_failed_title)
                 .content(R.string.license_failed)
@@ -423,14 +350,11 @@ public class Main extends ActionBarActivity {
 
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.play_store_link)));
                         startActivity(browserIntent);
-
                     }
 
                     @Override
                     public void onNegative(MaterialDialog dialog) {
-
                         finish();
-
                     }
                 })
                 .show();
