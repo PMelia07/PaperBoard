@@ -11,16 +11,16 @@ Try out the sample applications. Found at samples folder.
 
 #Features:
 - Material Design inspired/based dashboard.
-- Cloud based (only) wallpapers.
-- Wallpapers can be applied, cropped-and-applied, or downloaded.
-- In-App Icon Request tool.
-- Previews section, where user could see themed icons.
-- Clickable icons in Previews section, showing icon and app name in a dialog.
 - License Checker.
 - Changelog shown with every update.
+- Previews section, where user could see themed icons.
+- Clickable icons in Previews section, showing icon and app name in a dialog.
 - Apply section with 16 supported launcher.
+- Cloud based (only) wallpapers.
+- Wallpapers can be applied, cropped-and-applied, or downloaded.
+- Muzei Support
+- In-App Icon Request tool.
 - Credits section.
-
 - Requires API15+ or Android 4.0.3+
 
 <b>Future features (No ETA):</b>
