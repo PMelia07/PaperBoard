@@ -1,6 +1,5 @@
 package com.jahirfiquitiva.paperboard.activities;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,9 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.jahirfiquitiva.dashboardsample.R;
@@ -35,18 +32,15 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-import java.util.List;
 
 
 public class Main extends ActionBarActivity {
 
-    private static final int PROFILE_SETTING = 1;
     public Drawer.Result result = null;
     public AccountHeader.Result headerResult = null;
     public String thaApp, thaHome, thaPreviews, thaApply, thaWalls, thaRequest, thaCredits;
     public String version, drawerVersion;
     public int currentItem;
-    SharedPreferences sharedPreferences;
     private boolean firstrun, enable_features;
     private Preferences mPrefs;
     private boolean withLicenseChecker = false;
@@ -105,57 +99,23 @@ public class Main extends ActionBarActivity {
 
                         if (drawerItem != null) {
 
-                            if (drawerItem.getIdentifier() == 1) {
-                                currentItem = 1;
-                                getSupportActionBar().setTitle(thaApp);
-                                FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                tx.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                                tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Home"));
-                                tx.commit();
-                            } else if (drawerItem.getIdentifier() == 2) {
-                                currentItem = 2;
-                                getSupportActionBar().setTitle(thaPreviews);
-                                FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                tx.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-                                tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Previews"));
-                                tx.commit();
-                            } else if (drawerItem.getIdentifier() == 3) {
-                                currentItem = 3;
-                                getSupportActionBar().setTitle(thaApply);
-                                FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                tx.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-                                tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Apply"));
-                                tx.commit();
-                            } else if (drawerItem.getIdentifier() == 4) {
-                                ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-                                NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-                                boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+                            switch (drawerItem.getIdentifier()) {
+                                case 1: switchFragment(1, thaApp, "Home"); break;
+                                case 2: switchFragment(2, thaPreviews, "Previews"); break;
+                                case 3: switchFragment(3, thaApply, "Apply"); break;
+                                case 4:
+                                    ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                                    NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+                                    boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
 
-                                if (isConnected == true) {
-                                    currentItem = 4;
-                                    getSupportActionBar().setTitle(thaWalls);
-                                    FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                    tx.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-                                    tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Wallpapers"));
-                                    tx.commit();
-                                } else {
-                                    showNotConnectedDialog();
-                                }
-
-                            } else if (drawerItem.getIdentifier() == 5) {
-                                currentItem = 5;
-                                getSupportActionBar().setTitle(thaRequest);
-                                FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                tx.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-                                tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Request"));
-                                tx.commit();
-                            } else if (drawerItem.getIdentifier() == 6) {
-                                currentItem = 6;
-                                getSupportActionBar().setTitle(thaCredits);
-                                FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-                                tx.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                                tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments.Credits"));
-                                tx.commit();
+                                    if (isConnected) {
+                                        switchFragment(4, thaWalls, "Wallpapers");
+                                    } else {
+                                        showNotConnectedDialog();
+                                    }
+                                    break;
+                                case 5: switchFragment(5, thaRequest, "Request"); break;
+                                case 6: switchFragment(6, thaCredits, "Credits"); break;
                             }
                         }
                     }
@@ -173,9 +133,17 @@ public class Main extends ActionBarActivity {
 
     }
 
+    private void switchFragment(int itemId, String title, String fragment) {
+        currentItem = itemId;
+        getSupportActionBar().setTitle(title);
+        FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
+        tx.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        tx.replace(R.id.main, Fragment.instantiate(Main.this, "com.jahirfiquitiva.paperboard.fragments." + fragment));
+        tx.commit();
+    }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-
         outState = result.saveInstanceState(outState);
         super.onSaveInstanceState(outState);
     }
@@ -186,7 +154,7 @@ public class Main extends ActionBarActivity {
             result.closeDrawer();
         } else if (result != null && currentItem != 1) {
             result.setSelection(0);
-        } else if (result != null && currentItem == 1) {
+        } else if (result != null) {
             super.onBackPressed();
         } else {
             super.onBackPressed();
@@ -239,7 +207,6 @@ public class Main extends ActionBarActivity {
             case R.id.changelog:
                 changelog();
                 break;
-
         }
         return true;
     }
@@ -250,7 +217,6 @@ public class Main extends ActionBarActivity {
         if (enable_features) {
             result.addItem(walls, 3);
             result.addItem(request, 4);
-        } else {
         }
     }
 
@@ -265,7 +231,7 @@ public class Main extends ActionBarActivity {
             }
         } else {
             if (withLicenseChecker) {
-                if (enable_features == false) {
+                if (!enable_features) {
                     showNotLicensedDialog();
                 } else {
                     addItemsToDrawer();
@@ -291,20 +257,15 @@ public class Main extends ActionBarActivity {
                     }
                 })
                 .show();
-
     }
 
     private void showChangelogDialog() {
 
         String launchinfo = getSharedPreferences("PrefsFile", MODE_PRIVATE).getString("version", "0");
-        if (launchinfo.equals(getResources().getString(R.string.current_version))) {
-        } else {
+        if (!launchinfo.equals(getResources().getString(R.string.current_version))) {
             changelog();
         }
-
         storeSharedPrefs();
-
-
     }
 
     protected void storeSharedPrefs() {
@@ -345,97 +306,24 @@ public class Main extends ActionBarActivity {
                         .callback(new MaterialDialog.ButtonCallback() {
                             @Override
                             public void onPositive(MaterialDialog dialog) {
-
                                 enable_features = true;
                                 mPrefs.setFeaturesEnabled(true);
                                 addItemsToDrawer();
                                 showChangelogDialog();
-
                             }
                         })
                         .show();
-
-
             } else {
-                enable_features = false;
-                mPrefs.setFeaturesEnabled(false);
-                MaterialDialog dialog = new MaterialDialog.Builder(this)
-                        .title(R.string.license_failed_title)
-                        .content(R.string.license_failed)
-                        .positiveText(R.string.download)
-                        .negativeText(R.string.exit)
-                        .callback(new MaterialDialog.ButtonCallback() {
-                            @Override
-                            public void onPositive(MaterialDialog dialog) {
-
-                                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.play_store_link)));
-                                startActivity(browserIntent);
-
-                            }
-
-                            @Override
-                            public void onNegative(MaterialDialog dialog) {
-
-                                finish();
-
-                            }
-                        })
-                        .show();
-                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                    @Override
-                    public void onCancel(DialogInterface dialog) {
-                        finish();
-                    }
-                });
-                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        finish();
-                    }
-                });
-
+                showNotLicensedDialog();
             }
         } catch (Exception e) {
-            enable_features = false;
-            mPrefs.setFeaturesEnabled(false);
-            MaterialDialog dialog = new MaterialDialog.Builder(this)
-                    .title(R.string.license_failed_title)
-                    .content(R.string.license_failed)
-                    .positiveText(R.string.download)
-                    .negativeText(R.string.exit)
-                    .callback(new MaterialDialog.ButtonCallback() {
-                        @Override
-                        public void onPositive(MaterialDialog dialog) {
-
-                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.play_store_link)));
-                            startActivity(browserIntent);
-
-                        }
-
-                        @Override
-                        public void onNegative(MaterialDialog dialog) {
-
-                            finish();
-
-                        }
-                    })
-                    .show();
-            dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                @Override
-                public void onCancel(DialogInterface dialog) {
-                    finish();
-                }
-            });
-            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                @Override
-                public void onDismiss(DialogInterface dialog) {
-                    finish();
-                }
-            });
+            showNotLicensedDialog();
         }
     }
 
     private void showNotLicensedDialog() {
+        enable_features = false;
+        mPrefs.setFeaturesEnabled(false);
         MaterialDialog dialog = new MaterialDialog.Builder(this)
                 .title(R.string.license_failed_title)
                 .content(R.string.license_failed)
@@ -444,17 +332,13 @@ public class Main extends ActionBarActivity {
                 .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog dialog) {
-
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.play_store_link)));
                         startActivity(browserIntent);
-
                     }
 
                     @Override
                     public void onNegative(MaterialDialog dialog) {
-
                         finish();
-
                     }
                 })
                 .show();

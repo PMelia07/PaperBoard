@@ -1,4 +1,4 @@
-package com.jahirfiquitiva.paperboard.iconfragments;
+package com.jahirfiquitiva.paperboard.fragments;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -13,37 +13,42 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.jahirfiquitiva.dashboardsample.R;
 
 import java.util.ArrayList;
 
+public class IconsFragment extends Fragment {
 
-public class AllTheIcons extends Fragment {
-
-
-    public LayoutInflater inflater;
     private Context context;
+    private String[] themedApps;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.icons_grid, container, false);
-
+        themedApps = getResources().getStringArray(getArguments().getInt("themedAppsId", 0));
         context = getActivity();
-        int iconSize = getResources().getDimensionPixelSize(R.dimen.allapps_icon_preview);
         GridView gridview = (GridView) view.findViewById(R.id.icons_grid);
-        IconAdapter icAdapter = new IconAdapter(getActivity(), iconSize);
+        final IconAdapter icAdapter = new IconAdapter();
         gridview.setAdapter(icAdapter);
         return view;
 
     }
 
+    public static IconsFragment newInstance(int iconsArray, int themedApps) {
+        IconsFragment fragment = new IconsFragment();
+        Bundle args = new Bundle();
+        args.putInt("iconsArrayId", iconsArray);
+        args.putInt("themedAppsId", themedApps);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     private class IconAdapter extends BaseAdapter {
-        private Context mContext;
         private ArrayList<Integer> mThumbs;
 
-        public IconAdapter(Context mContext, int iconsize) {
-            this.mContext = mContext;
+        public IconAdapter() {
             loadIcon();
         }
 
@@ -63,10 +68,10 @@ public class AllTheIcons extends Fragment {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
 
             View icono = convertView;
-            IconsHolder holder = null;
+            IconsHolder holder;
             Animation anim = AnimationUtils.loadAnimation(context, R.anim.fade_in);
 
             if (icono == null) {
@@ -82,25 +87,36 @@ public class AllTheIcons extends Fragment {
 
             holder.icon.startAnimation(anim);
             holder.icon.setImageResource(mThumbs.get(position));
+            holder.icon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    View dialogIconView = View.inflate(getActivity(), R.layout.dialog_icon, null);
+                    ImageView dialogIcon = (ImageView) dialogIconView.findViewById(R.id.dialogicon);
+                    dialogIcon.setImageResource(mThumbs.get(position));
+                    new MaterialDialog.Builder(getActivity())
+                        .customView(dialogIconView, false)
+                        .title(themedApps[position])
+                        .positiveText(R.string.close)
+                        .show();
+                }
+            });
 
             return icono;
         }
 
         class IconsHolder {
             ImageView icon;
-
             IconsHolder(View v) {
                 icon = (ImageView) v.findViewById(R.id.icon_img);
             }
-
         }
 
         private void loadIcon() {
-            mThumbs = new ArrayList<Integer>();
+            mThumbs = new ArrayList<>();
 
             final Resources resources = getResources();
             final String packageName = getActivity().getApplication().getPackageName();
-            addIcon(resources, packageName, R.array.icon_pack);
+            addIcon(resources, packageName, getArguments().getInt("iconsArrayId", 0));
 
         }
 
