@@ -15,15 +15,15 @@ Try out the sample applications. Found at samples folder.
 - Wallpapers can be applied, cropped-and-applied, or downloaded.
 - In-App Icon Request tool.
 - Previews section, where user could see themed icons.
+- Clickable icons in Previews section, showing icon and app name in a dialog.
 - License Checker.
 - Changelog shown with every update.
 - Apply section with 16 supported launcher.
 - Credits section.
-- Muzei Support.
+
 - Requires API15+ or Android 4.0.3+
 
 <b>Future features (No ETA):</b>
-- Clickable icons in Previews section, showing icon and app name in a dialog.
 - Replace GridView and ListView with RecyclerView to improve performance.
 - Docks support.
 - Themeable UI.
