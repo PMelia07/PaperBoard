@@ -1,7 +1,10 @@
 package com.jahirfiquitiva.paperboard.fragments;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +16,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.jahirfiquitiva.dashboardsample.R;
 
 import java.util.ArrayList;
@@ -70,7 +74,7 @@ public class IconsFragment extends Fragment {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
 
             View icono = convertView;
             IconsHolder holder = null;
@@ -89,6 +93,18 @@ public class IconsFragment extends Fragment {
 
             holder.icon.startAnimation(anim);
             holder.icon.setImageResource(mThumbs.get(position));
+            holder.icon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    View dialogIconView = View.inflate(getActivity(), R.layout.dialog_icon, null);
+                    ImageView dialogIcon = (ImageView) dialogIconView.findViewById(R.id.dialogicon);
+                    dialogIcon.setImageResource(mThumbs.get(position));
+                    new MaterialDialog.Builder(getActivity())
+                        .customView(dialogIconView, false)
+                        .positiveText(R.string.close)
+                        .show();
+                }
+            });
 
             return icono;
         }
