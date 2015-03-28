@@ -108,7 +108,7 @@ public class Main extends ActionBarActivity {
                                     NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
                                     boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
 
-                                    if (isConnected == true) {
+                                    if (isConnected) {
                                         switchFragment(4, thaWalls, "Wallpapers");
                                     } else {
                                         showNotConnectedDialog();
@@ -116,7 +116,6 @@ public class Main extends ActionBarActivity {
                                 case 5: switchFragment(5, thaRequest, "Request");
                                 case 6: switchFragment(6, thaCredits, "Credits");
                             }
-
                         }
                     }
                 })
@@ -133,8 +132,7 @@ public class Main extends ActionBarActivity {
 
     }
 
-    private void switchFragment(int itemId, String title, String fragment)
-    {
+    private void switchFragment(int itemId, String title, String fragment) {
         currentItem = itemId;
         getSupportActionBar().setTitle(title);
         FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
@@ -145,7 +143,6 @@ public class Main extends ActionBarActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-
         outState = result.saveInstanceState(outState);
         super.onSaveInstanceState(outState);
     }
@@ -156,7 +153,7 @@ public class Main extends ActionBarActivity {
             result.closeDrawer();
         } else if (result != null && currentItem != 1) {
             result.setSelection(0);
-        } else if (result != null && currentItem == 1) {
+        } else if (result != null) {
             super.onBackPressed();
         } else {
             super.onBackPressed();
@@ -209,7 +206,6 @@ public class Main extends ActionBarActivity {
             case R.id.changelog:
                 changelog();
                 break;
-
         }
         return true;
     }
@@ -220,7 +216,6 @@ public class Main extends ActionBarActivity {
         if (enable_features) {
             result.addItem(walls, 3);
             result.addItem(request, 4);
-        } else {
         }
     }
 
@@ -235,7 +230,7 @@ public class Main extends ActionBarActivity {
             }
         } else {
             if (withLicenseChecker) {
-                if (enable_features == false) {
+                if (!enable_features) {
                     showNotLicensedDialog();
                 } else {
                     addItemsToDrawer();
@@ -261,20 +256,15 @@ public class Main extends ActionBarActivity {
                     }
                 })
                 .show();
-
     }
 
     private void showChangelogDialog() {
 
         String launchinfo = getSharedPreferences("PrefsFile", MODE_PRIVATE).getString("version", "0");
-        if (launchinfo.equals(getResources().getString(R.string.current_version))) {
-        } else {
+        if (!launchinfo.equals(getResources().getString(R.string.current_version))) {
             changelog();
         }
-
         storeSharedPrefs();
-
-
     }
 
     protected void storeSharedPrefs() {
@@ -341,7 +331,6 @@ public class Main extends ActionBarActivity {
                 .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog dialog) {
-
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.play_store_link)));
                         startActivity(browserIntent);
                     }
