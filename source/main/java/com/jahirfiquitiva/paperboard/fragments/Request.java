@@ -103,7 +103,7 @@ public class Request extends Fragment {
     }
 
     private void showNewAdviceDialog() {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
         if (!prefs.getBoolean("dontshowagain", false)) {
             new MaterialDialog.Builder(getActivity())
                     .title(R.string.advice)
@@ -113,14 +113,12 @@ public class Request extends Fragment {
                     .callback(new MaterialDialog.ButtonCallback() {
                         @Override
                         public void onPositive(MaterialDialog dialog) {
-                            PreferenceManager.getDefaultSharedPreferences(getActivity())
-                                    .edit().putBoolean("dontshowagain", false).commit();
+                            prefs.edit().putBoolean("dontshowagain", false).commit();
                         }
 
                         @Override
                         public void onNeutral(MaterialDialog dialog) {
-                            PreferenceManager.getDefaultSharedPreferences(getActivity())
-                                    .edit().putBoolean("dontshowagain", true).commit();
+                            prefs.edit().putBoolean("dontshowagain", true).commit();
                         }
                     }).show();
         }
