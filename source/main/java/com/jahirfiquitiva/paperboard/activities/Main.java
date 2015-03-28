@@ -1,6 +1,5 @@
 package com.jahirfiquitiva.paperboard.activities;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,9 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.jahirfiquitiva.dashboardsample.R;
@@ -35,18 +32,15 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-import java.util.List;
 
 
 public class Main extends ActionBarActivity {
 
-    private static final int PROFILE_SETTING = 1;
     public Drawer.Result result = null;
     public AccountHeader.Result headerResult = null;
     public String thaApp, thaHome, thaPreviews, thaApply, thaWalls, thaRequest, thaCredits;
     public String version, drawerVersion;
     public int currentItem;
-    SharedPreferences sharedPreferences;
     private boolean firstrun, enable_features;
     private Preferences mPrefs;
     private boolean withLicenseChecker = false;
