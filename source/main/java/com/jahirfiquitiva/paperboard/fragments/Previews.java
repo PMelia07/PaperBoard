@@ -12,11 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jahirfiquitiva.dashboardsample.R;
-import com.jahirfiquitiva.paperboard.iconfragments.AllTheIcons;
-import com.jahirfiquitiva.paperboard.iconfragments.GamesIcons;
-import com.jahirfiquitiva.paperboard.iconfragments.GoogleAppsIcons;
-import com.jahirfiquitiva.paperboard.iconfragments.LatestIcons;
-import com.jahirfiquitiva.paperboard.iconfragments.SystemIcons;
 import com.jahirfiquitiva.paperboard.tabs.SlidingTabLayout;
 
 /**
@@ -70,19 +65,19 @@ public class Previews extends Fragment {
             Fragment f = new Fragment();
             switch (position) {
                 case 0:
-                    f = new LatestIcons();
+                    f = IconsFragment.newInstance(R.array.latest);
                     break;
                 case 1:
-                    f = new SystemIcons();
+                    f = IconsFragment.newInstance(R.array.system);
                     break;
                 case 2:
-                    f = new GoogleAppsIcons();
+                    f = IconsFragment.newInstance(R.array.google);
                     break;
                 case 3:
-                    f = new GamesIcons();
+                    f = IconsFragment.newInstance(R.array.games);
                     break;
                 case 4:
-                    f = new AllTheIcons();
+                    f = IconsFragment.newInstance(R.array.icon_pack);
                     break;
             }
             return f;

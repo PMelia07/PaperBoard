@@ -1,4 +1,4 @@
-package com.jahirfiquitiva.paperboard.iconfragments;
+package com.jahirfiquitiva.paperboard.fragments;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -17,11 +17,9 @@ import com.jahirfiquitiva.dashboardsample.R;
 
 import java.util.ArrayList;
 
+public class IconsFragment extends Fragment {
 
-public class AllTheIcons extends Fragment {
-
-
-    public LayoutInflater inflater;
+    LayoutInflater inflater;
     private Context context;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,10 +30,19 @@ public class AllTheIcons extends Fragment {
         context = getActivity();
         int iconSize = getResources().getDimensionPixelSize(R.dimen.allapps_icon_preview);
         GridView gridview = (GridView) view.findViewById(R.id.icons_grid);
-        IconAdapter icAdapter = new IconAdapter(getActivity(), iconSize);
+        final IconAdapter icAdapter = new IconAdapter(getActivity(), iconSize);
         gridview.setAdapter(icAdapter);
         return view;
 
+    }
+
+    public static IconsFragment newInstance(int iconsArray)
+    {
+        IconsFragment fragment = new IconsFragment();
+        Bundle args = new Bundle();
+        args.putInt("iconsArrayId", iconsArray);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     private class IconAdapter extends BaseAdapter {
@@ -100,7 +107,7 @@ public class AllTheIcons extends Fragment {
 
             final Resources resources = getResources();
             final String packageName = getActivity().getApplication().getPackageName();
-            addIcon(resources, packageName, R.array.icon_pack);
+            addIcon(resources, packageName, getArguments().getInt("iconsArrayId", 0));
 
         }
 
