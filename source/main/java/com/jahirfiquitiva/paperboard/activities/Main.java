@@ -99,10 +99,10 @@ public class Main extends ActionBarActivity {
 
                         if (drawerItem != null) {
 
-                            switch ((int) drawerItem.getIdentifier()) {
-                                case 1: switchFragment(1, thaApp, "Home");
-                                case 2: switchFragment(2, thaPreviews, "Previews");
-                                case 3: switchFragment(3, thaApply, "Apply");
+                            switch (drawerItem.getIdentifier()) {
+                                case 1: switchFragment(1, thaApp, "Home"); break;
+                                case 2: switchFragment(2, thaPreviews, "Previews"); break;
+                                case 3: switchFragment(3, thaApply, "Apply"); break;
                                 case 4:
                                     ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
                                     NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
@@ -113,8 +113,9 @@ public class Main extends ActionBarActivity {
                                     } else {
                                         showNotConnectedDialog();
                                     }
-                                case 5: switchFragment(5, thaRequest, "Request");
-                                case 6: switchFragment(6, thaCredits, "Credits");
+                                    break;
+                                case 5: switchFragment(5, thaRequest, "Request"); break;
+                                case 6: switchFragment(6, thaCredits, "Credits"); break;
                             }
                         }
                     }
