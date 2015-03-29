@@ -65,19 +65,19 @@ public class Previews extends Fragment {
             Fragment f = new Fragment();
             switch (position) {
                 case 0:
-                    f = IconsFragment.newInstance(R.array.latest);
+                    f = IconsFragment.newInstance(R.array.latest, R.array.latest_apps);
                     break;
                 case 1:
-                    f = IconsFragment.newInstance(R.array.system);
+                    f = IconsFragment.newInstance(R.array.system, R.array.system_apps);
                     break;
                 case 2:
-                    f = IconsFragment.newInstance(R.array.google);
+                    f = IconsFragment.newInstance(R.array.google, R.array.google_apps);
                     break;
                 case 3:
-                    f = IconsFragment.newInstance(R.array.games);
+                    f = IconsFragment.newInstance(R.array.games, R.array.games_apps);
                     break;
                 case 4:
-                    f = IconsFragment.newInstance(R.array.icon_pack);
+                    f = IconsFragment.newInstance(R.array.icon_pack, R.array.icon_pack_apps);
                     break;
             }
             return f;

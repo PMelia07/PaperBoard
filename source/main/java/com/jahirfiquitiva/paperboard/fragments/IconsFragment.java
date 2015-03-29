@@ -21,12 +21,13 @@ import java.util.ArrayList;
 public class IconsFragment extends Fragment {
 
     private Context context;
+    private String[] themedApps;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.icons_grid, container, false);
-
+        themedApps = getResources().getStringArray(getArguments().getInt("themedAppsId", 0));
         context = getActivity();
         GridView gridview = (GridView) view.findViewById(R.id.icons_grid);
         final IconAdapter icAdapter = new IconAdapter();
@@ -35,11 +36,11 @@ public class IconsFragment extends Fragment {
 
     }
 
-    public static IconsFragment newInstance(int iconsArray)
-    {
+    public static IconsFragment newInstance(int iconsArray, int themedApps) {
         IconsFragment fragment = new IconsFragment();
         Bundle args = new Bundle();
         args.putInt("iconsArrayId", iconsArray);
+        args.putInt("themedAppsId", themedApps);
         fragment.setArguments(args);
         return fragment;
     }
@@ -94,6 +95,7 @@ public class IconsFragment extends Fragment {
                     dialogIcon.setImageResource(mThumbs.get(position));
                     new MaterialDialog.Builder(getActivity())
                         .customView(dialogIconView, false)
+                        .title(themedApps[position])
                         .positiveText(R.string.close)
                         .show();
                 }
