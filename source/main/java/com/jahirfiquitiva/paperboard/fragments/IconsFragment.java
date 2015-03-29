@@ -76,9 +76,8 @@ public class IconsFragment extends Fragment {
             if (icono == null) {
                 LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 icono = inflater.inflate(R.layout.icon, parent, false);
-                View dialogIconView = inflater.inflate(R.layout.dialog_icon, null, false);
                 icono.setLayoutParams(new GridView.LayoutParams(120, 120));
-                holder = new IconsHolder(icono, dialogIconView);
+                holder = new IconsHolder(icono);
                 icono.setTag(holder);
             } else {
                 holder = (IconsHolder) icono.getTag();
@@ -87,13 +86,14 @@ public class IconsFragment extends Fragment {
 
             holder.icon.startAnimation(anim);
             holder.icon.setImageResource(mThumbs.get(position));
-            final IconsHolder finalHolder = holder;
             holder.icon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finalHolder.dialogIcon.setImageResource(mThumbs.get(position));
+                    View dialogIconView = View.inflate(getActivity(), R.layout.dialog_icon, null);
+                    ImageView dialogIcon = (ImageView) dialogIconView.findViewById(R.id.dialogicon);
+                    dialogIcon.setImageResource(mThumbs.get(position));
                     new MaterialDialog.Builder(getActivity())
-                        .customView(finalHolder.dialog, false)
+                        .customView(dialogIconView, false)
                         .positiveText(R.string.close)
                         .show();
                 }
@@ -104,13 +104,8 @@ public class IconsFragment extends Fragment {
 
         class IconsHolder {
             ImageView icon;
-            View dialog;
-            ImageView dialogIcon;
-            IconsHolder(View v, View dialog) {
+            IconsHolder(View v) {
                 icon = (ImageView) v.findViewById(R.id.icon_img);
-                this.dialog = dialog;
-                dialogIcon = (ImageView) dialog.findViewById(R.id.dialogicon);
-
             }
         }
 
