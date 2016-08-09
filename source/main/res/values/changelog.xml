@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!--To add more changelogs, add another item in the fullchangelog array, and add another string-array with the same name. See below for example-->
+
+    <string-array name="fullchangelog">
+        <item>@array/v3</item>
+        <item>@array/v2</item>
+        <item>@array/v1</item>
+    </string-array>
+
+    <string-array name="v3">
+        <item>v. 3</item>
+        <item>Improved load of Icons Grid.</item>
+        <item>Fixed issue that made icons be duplicated and change its position weirdly, in Icons Grid.</item>
+        <item>Fixed the same issue in Wallpapers Grid.</item>
+        <item>Added animations to Icons and Wallpapers Grid.</item>
+        <item>Layout improvements in Home, Credits, Icons and Wallpapers sections. Including Cards issues fixes.</item>
+        <item>Deleted unnecessary cards in Credits section. (For libraries not used anymore).</item>
+        <item>Added Muzei support. Thanks to Danish Shah for some coding. Includes Settings.</item>
+        <item>Added use of Palette API in Wallpapers section. (With option to disable it).</item>
+        <item>Improved Changelog dialog (faster and simpler). Thanks to Allan W and Ivon.</item>
+        <item>Improved UI customization.</item>
+    </string-array>
+
+    <string-array name="v2">
+        <item>v. 2</item>
+        <item>New welcome card.</item>
+        <item>Minor fix with LicenseChecker.</item>
+        <item>Minor layout fix in IconRequest section.</item>
+        <item>Improved Apply section, now faster and added support for these launchers: Nine, KK, Lucid, Solo and TSF. (Total: 16 launchers there). Thanks to Mohammed Musaddiq for sharing stuff.</item>
+        <item>Apply section now shows installed and not installed texts for every launcher.</item>
+        <item>Fixed thing that when going back from DetailedWallpaper activity, it went back to home, now it goes back to Wallpapers Grid. Thanks to Allan W.</item>
+        <item>Added device info while sending e-mail to developer.</item>
+        <item>Added code to make the app supported for any screen size. Thanks to Danish Shah.</item>
+    </string-array>
+
+    <string-array name="v1">
+        <item>v. 1</item>
+        <item>First official OpenSource Release.</item>
+        <item>Many code improvements.</item>
+    </string-array>
+
+</resources>

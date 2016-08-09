@@ -14,9 +14,9 @@
         android:overScrollMode="ifContentScrolls"
         android:scrollbars="none">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <android.support.v7.widget.CardView
@@ -25,46 +25,75 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/cards_margin"
                 android:clickable="false"
-                android:padding="@dimen/cards_padding"
                 card_view:cardCornerRadius="@dimen/card_corner_radius"
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/cardsbg">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="@dimen/cards_margin"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/welcometest"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_margin="@dimen/cards_text_margin"
-                        android:text="@string/welcome_title"
-                        android:textColor="@color/primary"
-                        android:textSize="@dimen/text_big" />
-
-                    <TextView
-                        android:id="@+id/welcome_contenttest"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@id/welcometest"
-                        android:layout_below="@id/welcometest"
-                        android:layout_marginBottom="@dimen/cards_text_margin"
-                        android:lineSpacingMultiplier="1.2"
-                        android:text="@string/theme_description"
-                        android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/text_small" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/cards_margin">
 
                     <ImageView
-                        android:id="@+id/pic1test"
+                        android:id="@+id/iconsbanner"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/welcome_contenttest"
-                        android:padding="@dimen/cards_text_margin"
-                        android:src="@drawable/icons_banner" />
+                        android:src="@drawable/icons_banner"/>
+
+                    <LinearLayout
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/iconsbanner"
+                        android:layout_margin="@dimen/cards_text_margin"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/welcometest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:text="@string/welcome_title"
+                            android:textColor="@color/primary"
+                            android:textSize="@dimen/text_big" />
+
+                        <TextView
+                            android:id="@+id/welcome_contenttest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/welcometest"
+                            android:layout_marginBottom="@dimen/cards_text_margin"
+                            android:layout_marginTop="@dimen/cards_text_margin"
+                            android:lineSpacingMultiplier="1.2"
+                            android:text="@string/theme_description"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/text_small" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/description"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/rate_button"
+                            android:layout_gravity="right"
+                            android:gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?selectableItemBackground"
+                            android:padding="@dimen/cards_padding"
+                            android:text="@string/ratebtn"
+                            android:textColor="@color/accent"
+                            android:textSize="@dimen/text_ultrasmall"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
 
                 </RelativeLayout>
 
@@ -73,11 +102,13 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/cardView"
+                android:layout_below="@id/infocard"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/cards_margin"
                 card_view:cardCornerRadius="@dimen/card_corner_radius"
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/cardsbg">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -95,7 +126,7 @@
 
                     <LinearLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <TextView
@@ -131,7 +162,7 @@
 
                         <LinearLayout
                             android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
                             <TextView
@@ -153,11 +184,14 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cardOne"
+                android:layout_below="@id/cardView"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/cards_margin"
                 card_view:cardCornerRadius="@dimen/card_corner_radius"
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/cardsbg">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -174,7 +208,7 @@
 
                     <LinearLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <TextView
@@ -229,11 +263,14 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cardTwo"
+                android:layout_below="@id/cardOne"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/cards_margin"
                 card_view:cardCornerRadius="@dimen/card_corner_radius"
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/cardsbg">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -305,11 +342,14 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cardThree"
+                android:layout_below="@id/cardTwo"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/cards_margin"
                 card_view:cardCornerRadius="@dimen/card_corner_radius"
-                card_view:cardElevation="@dimen/cards_elevation">
+                card_view:cardElevation="@dimen/cards_elevation"
+                card_view:cardBackgroundColor="@color/cardsbg">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -379,10 +419,11 @@
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
-
-        </LinearLayout>
+        </RelativeLayout>
 
     </ScrollView>
 
 </RelativeLayout>
 
+
+    <!--                android:padding="@dimen/cards_padding" -->

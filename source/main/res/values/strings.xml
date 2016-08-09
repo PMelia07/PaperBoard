@@ -50,13 +50,6 @@
     <string name="app_three_content">"Here will go the description of your third app."</string>
     <string name="app_three_link">"https://www.google.com/"</string>
 
-    <!-- This will be the content of the changelog dialod -->
-    <string name="changelog_content">"v 1.0
-- First OpenSource version.
-- Includes many Material Design elements.
-- Code improvements.
-"</string>
-
     <!-- Your card in About The App section (In desc you can use html markup)-->
     <string name="iconpack_designer">Your Name</string>
     <string name="iconpack_designer_desc">
@@ -97,5 +90,11 @@
     <string name="replace_five">"text"</string>
     <string name="replace_six">"whatever"</string>
     <string name="replace_seven"></string>
+
+
+    <!-- Muzei Stuff -->
+    <string name="artsource_name">"PaperBoard"</string>
+    <string name="artsource_desc">"This is description of your ArtSource"</string>
+    <string name="muzei_settings">Muzei Settings</string>
 
 </resources>

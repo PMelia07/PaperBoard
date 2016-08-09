@@ -41,6 +41,14 @@
     <string name="done">"Hecho!"</string>
     <string name="wall_error">"Lo sentimos, la anterior acción no se aplicó, porque parece que no hay imagen. Revisa tu conexión a Internet e intenta de nuevo."</string>
     <string name="json_error_toast">"Ocurrió un error mientras se descargaba la información necesaria. Intenta de nuevo más tarde."</string>
+    <string name="share_wall">"Compartir Wallpaper"</string>
+
+    <!-- Sharing wallpaper from Muzei -->
+    <string name="partone">"Mi wallpaper para hoy es "</string>
+    <string name="parttwo">" por "</string>
+    <string name="partthree">" de "</string>
+    <string name="partfour">".\n"</string>
+    <string name="partfive">"Obténlo ahora en "</string>
 
     <!-- Some texts for Dialogs -->
     <string name="dismiss">Descartar</string>
@@ -61,8 +69,8 @@
     <string name="download">DESCARGAR</string>
 
     <!-- LauncherNotInstalled Dialog -->
-    <string name="lni_title">Launcher No Instalado</string>
-    <string name="lni_content">" Launcher no se encuentra instalado en tu dispositivo actualmente.
+    <string name="lni_title">" No Instalado"</string>
+    <string name="lni_content">" no se encuentra instalado en tu dispositivo actualmente.
 Deseas instalarlo desde Play Store?"</string>
     <string name="lni_yes">Si</string>
 
@@ -73,5 +81,15 @@ Deseas instalarlo desde Play Store?"</string>
     </string>
 
     <string name="exit">Salir</string>
+    <string name="ratebtn">CALIFICAR</string>
+
+    <string name="installed">Instalado</string>
+	<string name="noninstalled">No Instalado</string>
+
+    <string name="muzeisets_title">"Actualizar cada:"</string>
+    <string name="minutes">Minutos</string>
+    <string name="hours">Horas</string>
+    <string name="muzei_info">"Nota: Ésta configuración puede afectar el intervalo de actualización de la información de los Wallpapers."</string>
+    <string name="justshare">Compartir</string>
 
 </resources>

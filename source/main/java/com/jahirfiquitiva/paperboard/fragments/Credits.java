@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.CardView;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -33,14 +35,14 @@ public class Credits extends Fragment {
 
         context = getActivity();
 
+        ActionBar toolbar = ((ActionBarActivity)context).getSupportActionBar();
+        toolbar.setTitle(R.string.section_seven);
+
         TextView authordesc = (TextView) root.findViewById(R.id.dashauthor_info);
         authordesc.setText(Html.fromHtml(getString(R.string.dashboard_author_desc)));
 
         TextView designerdesc = (TextView) root.findViewById(R.id.dev_card_content);
         designerdesc.setText(Html.fromHtml(getString(R.string.iconpack_designer_desc)));
-
-        TextView shapeviewlib = (TextView) root.findViewById(R.id.libone_content);
-        shapeviewlib.setText(Html.fromHtml(getString(R.string.shapeview_desc)));
 
         TextView fablib = (TextView) root.findViewById(R.id.libtwo_content);
         fablib.setText(Html.fromHtml(getString(R.string.fab_desc)));
@@ -54,23 +56,12 @@ public class Credits extends Fragment {
         TextView picassolib = (TextView) root.findViewById(R.id.libfive_content);
         picassolib.setText(Html.fromHtml(getString(R.string.picasso_desc)));
 
-        TextView pkapplylauncherlib = (TextView) root.findViewById(R.id.libsix_content);
-        pkapplylauncherlib.setText(Html.fromHtml(getString(R.string.pkapplylauncher_desc)));
-
         TextView pkiconrequestlib = (TextView) root.findViewById(R.id.libseven_content);
         pkiconrequestlib.setText(Html.fromHtml(getString(R.string.pkrequestmanager_desc)));
 
         TextView okhttplib = (TextView) root.findViewById(R.id.libeight_content);
         okhttplib.setText(Html.fromHtml(getString(R.string.okhttp_desc)));
 
-        CardView libonecard = (CardView) root.findViewById(R.id.libonecard);
-        libonecard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent liboneweb = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.shapeview_web)));
-                startActivity(liboneweb);
-            }
-        });
 
         CardView libtwocard = (CardView) root.findViewById(R.id.libtwocard);
         libtwocard.setOnClickListener(new View.OnClickListener() {
@@ -105,15 +96,6 @@ public class Credits extends Fragment {
             public void onClick(View v) {
                 Intent libfiveweb = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.picasso_web)));
                 startActivity(libfiveweb);
-            }
-        });
-
-        CardView libsixcard = (CardView) root.findViewById(R.id.libsixcard);
-        libsixcard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent libsixweb = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.pkapplylauncher_web)));
-                startActivity(libsixweb);
             }
         });
 

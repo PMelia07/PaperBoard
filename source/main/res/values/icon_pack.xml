@@ -12,6 +12,7 @@
     <!-- SYSTEM ICONS -->
     <!-- System icons listed here -->
     <string-array name="system">
+		<item>fimbo</item>
         <item>andy</item>
         <item>andy</item>
         <item>andy</item>
@@ -23,6 +24,7 @@
     <!-- GOOGLE APPS ICONS -->
     <!-- Google Apps icons are listed here -->
     <string-array name="google">
+		<item>fimbo</item>
         <item>andy</item>
         <item>andy</item>
         <item>andy</item>
@@ -39,6 +41,7 @@
     <!-- GAMES ICONS -->
     <!-- Game icons are listed here -->
     <string-array name="games">
+		<item>fimbo</item>
         <item>andy</item>
         <item>andy</item>
         <item>andy</item>
@@ -58,46 +61,7 @@
     <!-- ALL ICONS -->
     <!-- All of your icons listed here -->
     <string-array name="icon_pack" translatable="false">
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
-        <item>andy</item>
+		<item>fimbo</item>
         <item>andy</item>
         <item>andy</item>
         <item>andy</item>

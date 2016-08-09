@@ -5,16 +5,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.jahirfiquitiva.dashboardsample.R;
-import com.jahirfiquitiva.paperboard.iconfragments.AllTheIcons;
-import com.jahirfiquitiva.paperboard.iconfragments.GamesIcons;
-import com.jahirfiquitiva.paperboard.iconfragments.GoogleAppsIcons;
-import com.jahirfiquitiva.paperboard.iconfragments.LatestIcons;
-import com.jahirfiquitiva.paperboard.iconfragments.SystemIcons;
 import com.jahirfiquitiva.paperboard.tabs.SlidingTabLayout;
 
 /**
@@ -24,6 +21,7 @@ public class Previews extends Fragment {
 
     private ViewPager mPager;
     private SlidingTabLayout mTabs;
+    private Context context;
 
     public static Fragment newInstance(Context context) {
         Previews f = new Previews();
@@ -33,6 +31,11 @@ public class Previews extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.section_all_icons, null);
+
+        context = getActivity();
+
+        ActionBar toolbar = ((ActionBarActivity)context).getSupportActionBar();
+        toolbar.setTitle(R.string.section_two);
 
         mPager = (ViewPager) root.findViewById(R.id.pager);
         mPager.setAdapter(new MyPagerAdapter(getActivity().getSupportFragmentManager()));
@@ -62,19 +65,19 @@ public class Previews extends Fragment {
             Fragment f = new Fragment();
             switch (position) {
                 case 0:
-                    f = new LatestIcons();
+                    f = IconsFragment.newInstance(R.array.latest, R.array.latest_apps);
                     break;
                 case 1:
-                    f = new SystemIcons();
+                    f = IconsFragment.newInstance(R.array.system, R.array.system_apps);
                     break;
                 case 2:
-                    f = new GoogleAppsIcons();
+                    f = IconsFragment.newInstance(R.array.google, R.array.google_apps);
                     break;
                 case 3:
-                    f = new GamesIcons();
+                    f = IconsFragment.newInstance(R.array.games, R.array.games_apps);
                     break;
                 case 4:
-                    f = new AllTheIcons();
+                    f = IconsFragment.newInstance(R.array.icon_pack, R.array.icon_pack_apps);
                     break;
             }
             return f;

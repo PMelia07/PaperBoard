@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.jahirfiquitiva.dashboardsample">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -9,18 +10,24 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
-
-    <!-- Not for now -->
-    <!--
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    -->
+
+    <supports-screens 
+        android:anyDensity="true" 
+        android:smallScreens="true" 
+        android:normalScreens="true" 
+        android:largeScreens="true"
+        android:xlargeScreens="true"  
+        android:resizeable="true" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+
+        <!-- Main Activity -->
         <activity
             android:name=".Home"
             android:label="@string/app_name"
@@ -31,6 +38,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Icons -->
         <activity
             android:name="com.jahirfiquitiva.paperboard.activities.Main"
             android:label="@string/app_name">
@@ -148,14 +157,34 @@
                 <category android:name="android.intent.category.INFO" />
             </intent-filter>
         </activity>
+
+        <!-- Wallpapers Activity -->
         <activity
             android:name="com.jahirfiquitiva.paperboard.activities.DetailedWallpaper"
             android:label="@string/title_activity_detailed_wallpaper"
             android:theme="@style/Default">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.jahirfiquitiva.paperboard.activities.Main" />
+                android:value="com.jahirfiquitiva.paperboard.activities.DetailedWallpaper" />
         </activity>
+
+        <service android:name="com.jahirfiquitiva.paperboard.muzei.ArtSource"
+            android:label="@string/artsource_name"
+            android:description="@string/artsource_desc"
+            android:icon="@drawable/ic_muzei_logo">
+            <intent-filter>
+                <action android:name="com.google.android.apps.muzei.api.MuzeiArtSource" />
+            </intent-filter>
+            <meta-data android:name="color" android:value="@color/primary" />
+            <meta-data android:name="settingsActivity" android:value="com.jahirfiquitiva.paperboard.muzei.Settings"/>
+        </service>
+
+        <activity android:name="com.jahirfiquitiva.paperboard.muzei.Settings"
+            android:label="@string/muzei_settings"
+            android:theme="@style/Default"
+            android:exported="true"
+            android:windowSoftInputMode="stateHidden"/>
+
     </application>
 
 </manifest>

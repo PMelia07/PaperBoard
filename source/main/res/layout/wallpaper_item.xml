@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/wall_card"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="4dp">
 
     <ProgressBar
         android:id="@+id/progress"
-        style="?android:progressBarStyleSmall"
+        style="?android:progressBarStyle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true" />
@@ -16,14 +16,17 @@
         android:id="@+id/wall"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         tools:ignore="ContentDescription" />
 
     <LinearLayout
+        android:id="@+id/titlebg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/wall"
         android:layout_gravity="bottom"
-        android:background="#B0000000">
+        android:alpha="0.7"
+        android:background="#000">
 
         <TextView
             android:id="@+id/name"
@@ -35,7 +38,7 @@
             android:paddingLeft="@dimen/cards_padding"
             android:paddingRight="@dimen/cards_padding"
             android:paddingTop="@dimen/cards_padding"
-            android:textColor="#fff"
+            android:textColor="#ffffffff"
             android:textSize="@dimen/text_small"
             tools:text="Title" />
 
